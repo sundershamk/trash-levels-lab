@@ -24,6 +24,12 @@ jobs:
     - name: Build
       run: go build -v main.go
 
+  get-debug:                           # Add this job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug
+        uses: PSModule/Debug@v0.0.3
+
   containerize:
     needs: build
     runs-on: ubuntu-latest
